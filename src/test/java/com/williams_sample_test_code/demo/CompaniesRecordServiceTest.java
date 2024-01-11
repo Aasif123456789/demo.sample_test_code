@@ -36,30 +36,6 @@ public class CompaniesRecordServiceTest {
         assertNotNull(result);
     }
 
-//    @Test
-//    void testFileProcessing() throws IOException, FileTypeNotMatchException {
-//        // Mocking a valid text file
-//        String content = "Company LTD\n12345\n\"Event Type\"\n01/01/2022";
-//        MultipartFile file = new MockMultipartFile("test.txt", content.getBytes(StandardCharsets.UTF_8));
-//
-//        List<String> lines = Arrays.asList("Company LTD", "12345", "\"Event Type\"", "01/01/2022");
-//        when(companiesRecordService.FileReadByLine(file)).thenReturn(lines);
-//
-//        // Mocking the behavior of save method in the repository
-//        when(companiesRecordRepository.save(companiesRecordService.FileProcessing(file)))
-//                .thenReturn(new CompaniesRecords();
-//
-//        CompaniesRecords result = companiesRecordService.FileProcessing(file);
-//
-//        assertNotNull(result);
-//    }
-
-//    @Test
-//    void testValidateFileType_valid() {
-//        MultipartFile file = new MockMultipartFile("test.txt", "content".getBytes(StandardCharsets.UTF_8));
-//
-//        assertDoesNotThrow(() -> companiesRecordService.validateFileType(file));
-//    }
 
     @Test
     void testValidateFileType_invalid() {
