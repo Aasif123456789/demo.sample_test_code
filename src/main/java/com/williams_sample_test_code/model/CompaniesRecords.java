@@ -1,4 +1,4 @@
-package com.williams_sample_test_code.model_entity;
+package com.williams_sample_test_code.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

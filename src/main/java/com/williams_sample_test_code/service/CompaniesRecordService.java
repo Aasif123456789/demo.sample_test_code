@@ -1,7 +1,7 @@
-package com.williams_sample_test_code.service_interface.impl;
-import com.williams_sample_test_code.data_access.CompaniesRecordRepository;
-import com.williams_sample_test_code.exception_handeller.FileTypeNotMatchException;
-import com.williams_sample_test_code.model_entity.CompaniesRecords;
+package com.williams_sample_test_code.service;
+import com.williams_sample_test_code.repository.CompaniesRecordRepository;
+import com.williams_sample_test_code.exception.FileTypeNotMatchException;
+import com.williams_sample_test_code.model.CompaniesRecords;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,7 +69,7 @@ import static com.williams_sample_test_code.util.EventTypes.getEventTypeCodeByDe
             throw new FileTypeNotMatchException("Invalid File Type. Upload a .txt File.");
         }
     }
-    //---------->reads the file by line
+    //---------->reads the file by line by line
     public List<String> FileReadByLine(MultipartFile file) {
         try {
             return org.apache.commons.io.IOUtils.readLines(file.getInputStream(), StandardCharsets.UTF_8);
@@ -81,8 +81,8 @@ import static com.williams_sample_test_code.util.EventTypes.getEventTypeCodeByDe
 
     }
 
-    public void CompanyNameSetting(String line, CompaniesRecords currentCompanyRecord) {
-        currentCompanyRecord.setCompanyName(line.trim());
+    public void CompanyNameSetting(String name, CompaniesRecords currentCompanyRecord) {
+        currentCompanyRecord.setCompanyName(name.trim());
         currentCompanyRecord.setUniqueIdentifier(UUID.randomUUID().toString());
     }
 
